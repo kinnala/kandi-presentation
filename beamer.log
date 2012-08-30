@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.6.1)  30 AUG 2012 14:15
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.6.1)  30 AUG 2012 15:05
 entering extended mode
  %&-line parsing enabled.
 **beamer.tex
@@ -1095,7 +1095,17 @@ File: fretting_geom_meas.pdf Graphic file (type pdf)
 File: finer_mesh.pdf Graphic file (type pdf)
  <use finer_mesh.pdf> [8
 
- <./finer_mesh.pdf>]
+ <./finer_mesh.pdf>] <fretting_meas_tarkempi.pdf, id=297, 421.575pt x 352.20586
+pt>
+File: fretting_meas_tarkempi.pdf Graphic file (type pdf)
+
+<use fretting_meas_tarkempi.pdf>
+Overfull \vbox (16.27818pt too high) detected at line 118
+ []
+
+[9
+
+ <./fretting_meas_tarkempi.pdf>]
 \tf@nav=\write5
 \openout5 = `beamer.nav'.
 
@@ -1112,10 +1122,10 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 13737 strings out of 494790
- 241133 string characters out of 1177469
+ 13744 strings out of 494790
+ 241299 string characters out of 1177469
  322669 words of memory out of 3000000
- 16505 multiletter control sequences out of 15000+50000
+ 16509 multiletter control sequences out of 15000+50000
  14909 words of font info for 41 fonts, out of 3000000 for 9000
  212 hyphenation exceptions out of 8191
  48i,16n,57p,341b,549s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1125,9 +1135,9 @@ ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/cm-
 super/sfsi1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss0600.pfb><
 /usr/share/texmf/fonts/type1/public/cm-super/sfss1095.pfb></usr/share/texmf/fon
 ts/type1/public/cm-super/sfss1440.pfb>
-Output written on beamer.pdf (8 pages, 657172 bytes).
+Output written on beamer.pdf (9 pages, 666667 bytes).
 PDF statistics:
- 323 PDF objects out of 1000 (max. 8388607)
- 17 named destinations out of 1000 (max. 500000)
- 119 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 353 PDF objects out of 1000 (max. 8388607)
+ 19 named destinations out of 1000 (max. 500000)
+ 124 words of extra memory for PDF output out of 10000 (max. 10000000)
 
