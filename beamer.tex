@@ -27,7 +27,7 @@
 \begin{frame}{Malli, 2D}
 
 \begin{itemize}
-\item Alkutila
+\item Alkutila: Painin, laatta
 \item Reunaehdot
 \end{itemize}
 
@@ -35,9 +35,13 @@
 \includegraphics[width=10cm]{fretting_geom.pdf}
 \end{figure}
 
+\begin{itemize}
+\item Abaqus/Standard 6.12-1
+\end{itemize}
+
 \end{frame}
 
-\begin{frame}{Malli, 2D, jatkuu}
+\begin{frame}{Simulaation vaiheet}
 
 \begin{itemize}
 \item Vaihe 1: 5 kN voima
@@ -53,12 +57,54 @@
 
 \end{frame}
 
-\begin{frame}{Malli, 2D, siirtymä}
+\begin{frame}{Simulaation vaiheet: Yläreunan siirtymä}
+
+\begin{itemize}
+\item Siirto reunaehdolla, ns. "hidas siirtymä"
+\end{itemize}
 
 \begin{figure}
 \includegraphics[width=10cm]{anim1.pdf}\\
-\includegraphics[width=10cm]{anim2.pdf}\\
-\includegraphics[width=10cm]{anim3.pdf}
+\includegraphics[width=10cm]{anim2.pdf}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Simulaation vaiheet: Yläreunan siirtymä jatkuu}
+
+\begin{figure}
+\includegraphics[width=10cm]{anim3.pdf}\\
+\includegraphics[width=10cm]{anim4.pdf}\\
+\includegraphics[width=10cm]{anim5.pdf}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Inversio-ongelma}
+
+\begin{itemize}
+\item Pyritään esimoimaan kitkakerroin $\mu$
+\item Prioritietona $x$-suuntaiset jännitykset mittapisteissä\\($\sim$ venymäliuskamittaus)
+\end{itemize}
+
+\begin{figure}
+\includegraphics[width=10cm]{fretting_geom_meas.pdf}
+\end{figure}
+
+\begin{itemize}
+\item Mittadata synteettistä
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Synteettisen mittadatan generointi}
+
+\begin{itemize}
+\item Minimoidaan inversiorikosta $\rightarrow$ mittadata tiheämmästä verkosta
+\end{itemize}
+
+\begin{figure}
+\includegraphics[width=10cm]{finer_mesh.pdf}
 \end{figure}
 
 \end{frame}
