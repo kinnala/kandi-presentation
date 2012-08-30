@@ -15,7 +15,7 @@
 \begin{frame}{Ongelma}
 
 \begin{itemize}
-\item Lähtökohtana: Onnistuuko huonosti tunnettujen parametrien ennustaminen elastisesta kitkamallista data-assimilaation tarjoamien keinojen avulla?
+\item Lähtökohtana: Onnistuuko huonosti tunnettujen parametrien ennustaminen elastisesta kitkamallista \emph{data-assimilaation} tarjoamien keinojen avulla?
 \end{itemize}
 
 \begin{figure}
@@ -83,8 +83,8 @@
 \begin{frame}{Inversio-ongelma}
 
 \begin{itemize}
-\item Pyritään esimoimaan kitkakerroin $\mu$
-\item Prioritietona $x$-suuntaiset jännitykset mittapisteissä\\($\sim$ venymäliuskamittaus)
+\item Pyritään estimoimaan kitkakerroin $\mu$
+\item \emph{A priori} -tietona $x$-suuntaiset jännitykset mittapisteissä\\($\sim$ venymäliuskamittaus)
 \end{itemize}
 
 \begin{figure}
@@ -107,6 +107,10 @@
 \includegraphics[width=10cm]{finer_mesh.pdf}
 \end{figure}
 
+\begin{itemize}
+\item Miten verrata tiheämmän ja harvemman verkon antamia jännityksiä?
+\end{itemize}
+
 \end{frame}
 
 \begin{frame}{Synteettisen mittadatan generointi 2}
@@ -114,6 +118,37 @@
 \begin{figure}
 \includegraphics[width=10cm]{fretting_meas_tarkempi.pdf}
 \end{figure}
+
+\end{frame}
+
+\begin{frame}{Ongelman yhteenveto}
+
+\begin{itemize}
+\item Estimoitava suure: Kitkakerroin $\mu=0{,}5$
+\item \emph{A priori} -tieto: $x$-suuntaiset jännitykset mittapisteissä
+\item Menetelmät: \emph{Data-assimilaatio}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Data-assimilaatio}
+
+\begin{itemize}
+\item Pohjimmiltaan havaintojen ja mallin tuotaman informaation yhteensulauttamista
+\item Perinteisiä sovelluskohteita: Säähavaintomallit, valtamerimallit
+\item Data-assimilaation menetelmiä
+\begin{itemize}
+\item 3DVar, 4DVar
+\item Kalman Filter, Extended-, Ensemble-, ...
+\item ...
+\end{itemize}
+\item Tässä työssä \emph{Ensemble Smoother}, eli ES
+\item Perustuu samaan ideaan kuin \emph{Ensemble Kalman Filter}, eli EnKF
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Data-assimilaatio, yleistä}
 
 \end{frame}
 

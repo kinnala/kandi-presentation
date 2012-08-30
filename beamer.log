@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.6.1)  30 AUG 2012 15:05
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.6.1)  30 AUG 2012 16:45
 entering extended mode
  %&-line parsing enabled.
 **beamer.tex
@@ -1046,31 +1046,31 @@ File: fretting_mesh.pdf Graphic file (type pdf)
  <use fretting_mesh.pdf>
 [2
 
- <./fretting_mesh.pdf>] <fretting_geom.pdf, id=112, 421.575pt x 141.41833pt>
+ <./fretting_mesh.pdf>] <fretting_geom.pdf, id=113, 421.575pt x 141.41833pt>
 File: fretting_geom.pdf Graphic file (type pdf)
 
 <use fretting_geom.pdf> [3
 
  <./fretting_geom.pdf>]
-<mises.pdf, id=141, 702.625pt x 321.2pt>
+<mises.pdf, id=142, 702.625pt x 321.2pt>
 File: mises.pdf Graphic file (type pdf)
  <use mises.pdf> [4
 
  <./mises.pdf>]
-<anim1.pdf, id=170, 1065.9825pt x 220.825pt>
+<anim1.pdf, id=171, 1065.9825pt x 220.825pt>
 File: anim1.pdf Graphic file (type pdf)
  <use anim1.pdf>
-<anim2.pdf, id=172, 1065.9825pt x 220.825pt>
+<anim2.pdf, id=173, 1065.9825pt x 220.825pt>
 File: anim2.pdf Graphic file (type pdf)
  <use anim2.pdf> [5
 
- <./anim1.pdf> <./anim2.pdf>] <anim3.pdf, id=202, 1065.9825pt x 220.825pt>
+ <./anim1.pdf> <./anim2.pdf>] <anim3.pdf, id=203, 1065.9825pt x 220.825pt>
 File: anim3.pdf Graphic file (type pdf)
  <use anim3.pdf>
-<anim4.pdf, id=204, 1065.9825pt x 220.825pt>
+<anim4.pdf, id=205, 1065.9825pt x 220.825pt>
 File: anim4.pdf Graphic file (type pdf)
  <use anim4.pdf>
-<anim5.pdf, id=206, 1065.9825pt x 220.825pt>
+<anim5.pdf, id=207, 1065.9825pt x 220.825pt>
 File: anim5.pdf Graphic file (type pdf)
  <use anim5.pdf> [6
 
@@ -1085,27 +1085,33 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 98.
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-<fretting_geom_meas.pdf, id=237, 421.575pt x 141.41833pt>
+<fretting_geom_meas.pdf, id=238, 421.575pt x 141.41833pt>
 File: fretting_geom_meas.pdf Graphic file (type pdf)
 
 <use fretting_geom_meas.pdf> [7
 
  <./fretting_geom_meas.pdf>]
-<finer_mesh.pdf, id=269, 823.075pt x 411.5375pt>
+<finer_mesh.pdf, id=270, 823.075pt x 411.5375pt>
 File: finer_mesh.pdf Graphic file (type pdf)
  <use finer_mesh.pdf> [8
 
- <./finer_mesh.pdf>] <fretting_meas_tarkempi.pdf, id=297, 421.575pt x 352.20586
+ <./finer_mesh.pdf>] <fretting_meas_tarkempi.pdf, id=299, 421.575pt x 352.20586
 pt>
 File: fretting_meas_tarkempi.pdf Graphic file (type pdf)
 
 <use fretting_meas_tarkempi.pdf>
-Overfull \vbox (16.27818pt too high) detected at line 118
+Overfull \vbox (16.27818pt too high) detected at line 122
  []
 
 [9
 
- <./fretting_meas_tarkempi.pdf>]
+ <./fretting_meas_tarkempi.pdf>] [10
+
+] [11
+
+] [12
+
+]
 \tf@nav=\write5
 \openout5 = `beamer.nav'.
 
@@ -1122,22 +1128,24 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 13744 strings out of 494790
- 241299 string characters out of 1177469
- 322669 words of memory out of 3000000
- 16509 multiletter control sequences out of 15000+50000
- 14909 words of font info for 41 fonts, out of 3000000 for 9000
+ 13793 strings out of 494790
+ 242469 string characters out of 1177469
+ 323669 words of memory out of 3000000
+ 16551 multiletter control sequences out of 15000+50000
+ 15670 words of font info for 42 fonts, out of 3000000 for 9000
  212 hyphenation exceptions out of 8191
  48i,16n,57p,341b,549s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf-
 texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fon
-ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/cm-
-super/sfsi1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss0600.pfb><
-/usr/share/texmf/fonts/type1/public/cm-super/sfss1095.pfb></usr/share/texmf/fon
-ts/type1/public/cm-super/sfss1440.pfb>
-Output written on beamer.pdf (9 pages, 666667 bytes).
+ts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-texlive/fonts/type1/pu
+blic/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsi1
+095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss0600.pfb></usr/share/
+texmf/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf/fonts/type1/pu
+blic/cm-super/sfss1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss14
+40.pfb>
+Output written on beamer.pdf (12 pages, 706481 bytes).
 PDF statistics:
- 353 PDF objects out of 1000 (max. 8388607)
- 19 named destinations out of 1000 (max. 500000)
- 124 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 442 PDF objects out of 1000 (max. 8388607)
+ 25 named destinations out of 1000 (max. 500000)
+ 130 words of extra memory for PDF output out of 10000 (max. 10000000)
 
