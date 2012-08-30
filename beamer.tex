@@ -1,0 +1,66 @@
+\documentclass{beamer}
+\usepackage[finnish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usetheme{Warsaw}
+\title[Data-assimilaatio kitkamallissa]{Data-assimilaatio kitkamallissa}
+\author{Tom Gustafsson}
+\date{5. syyskuuta 2012}
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Ongelma}
+
+\begin{itemize}
+\item Lähtökohtana: Onnistuuko huonosti tunnettujen parametrien ennustaminen elastisesta kitkamallista data-assimilaation tarjoamien keinojen avulla?
+\end{itemize}
+
+\begin{figure}
+\includegraphics[width=8cm]{fretting_mesh.pdf}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Malli, 2D}
+
+\begin{itemize}
+\item Alkutila
+\item Reunaehdot
+\end{itemize}
+
+\begin{figure}
+\includegraphics[width=10cm]{fretting_geom.pdf}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Malli, 2D, jatkuu}
+
+\begin{itemize}
+\item Vaihe 1: 5 kN voima
+\end{itemize}
+
+\begin{figure}
+\includegraphics[width=9cm]{mises.pdf}
+\end{figure}
+
+\begin{itemize}
+\item Vaihe 2: Yläreunan siirto 70 cm oikealle
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Malli, 2D, siirtymä}
+
+\begin{figure}
+\includegraphics[width=10cm]{anim1.pdf}\\
+\includegraphics[width=10cm]{anim2.pdf}\\
+\includegraphics[width=10cm]{anim3.pdf}
+\end{figure}
+
+\end{frame}
+
+\end{document}
