@@ -150,6 +150,82 @@
 
 \begin{frame}{Data-assimilaatio, yleistä}
 
+\begin{itemize}
+\item Systeemin (todellinen) tila $\boldsymbol{\psi}^t \in \mathbb{R}^N$
+\item Mittaus $\boldsymbol{d} \in \mathbb{R}^M$
+\begin{itemize}
+\item Ei tarkka
+\item Suhde tilaan $\boldsymbol{d} = \mathbf{M}\boldsymbol{\psi}^t+\boldsymbol{\epsilon}$
+\item Mittamatriisi $\mathbf{M} \in \mathbb{R}^{M \times N}$
+\item Virhe $\boldsymbol{\epsilon} \sim \mathcal{N}_M(0,\boldsymbol{\Sigma})$
+\item Kovarianssimatriisi $\boldsymbol{\Sigma} \in \mathbb{R}^{M \times M}$
+\end{itemize}
+\item Estimoitu tila $\boldsymbol{\psi}^f \in \mathbb{R}^N$
+\begin{itemize}
+\item Aluksi esim. mittauksien perusteella
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Data-assimilaatio, esimerkki}
+
+$N=M=2,~\mathbf{M} = \mathbf{I},~\boldsymbol{\Sigma} = \sigma\mathbf{I}$
+
+\begin{figure}
+\includegraphics[width=6cm]{enkf1.pdf}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Data-assimilaatio, yleistä 2}
+
+\begin{itemize}
+\item Todellinen tila $\boldsymbol{\psi}^t$ muuttuu ajan kuluessa
+\item Malli estimaatin aikakehityksestä:
+\[
+\boldsymbol{\psi}^f_{t+\Delta t} = \boldsymbol{\psi}^f_t + \int_{t}^{t+\Delta t} \! \boldsymbol{G}(\boldsymbol{\psi}^f_t,t) \, \mathrm{d}t
+\]
+\begin{itemize}
+\item Malli epätäydellinen, eli estimaatin virhe kasvaa aikakehitettäessä
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Data-assimilaatio, esimerkki 2}
+
+\begin{figure}
+\includegraphics[width=11cm]{enkf2.pdf}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Data-assimilaatio, yleistä 3}
+
+\begin{itemize}
+\item Tulkitaan normaalijakauma todennäköisyystiheysfunktiona $f(\boldsymbol{\psi},t)$
+\item Tällöin $f$:n aikakehitystä kuvaa \emph{Fokker-Planck -yhtälö}
+\[
+\frac{\partial f}{\partial t} + \sum_{i=1}^N \frac{\partial \left ( G_i f \right )}{\partial \psi_i} = \frac{1}{2} \sum_{i=1}^N \sum_{j=1}^N \frac{\partial^2 \left ( Q_{ij} f \right )}{\partial \psi_i \partial \psi_j}
+\]
+\item \emph{Hurja}, mutta ei niin hurja miltä näyttää (sij. $\mathbf{G} = \mathbf{0}$ ja $\mathbf{Q} = \mathbf{I}$) 
+\item Yleinen tapaus ei ratkea analyyttisesti $\rightarrow$ EnKF
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Ensemble Kalman Filter}
+
+\begin{itemize}
+\item Idea: Otetaan $n$-kappaletta realisaatioita alkutilan normaalijakaumasta
+\item Aikakehitetään näin saadun \emph{kokoelman} jokaista tilaa erikseen operaattorin $\boldsymbol{G}$ avulla
+\item Etu: Estimaatin kovarianssimatriisia ei tarvitse aikakehittää (lineaarisessa $\mathcal{O}(N)$, epälineaarisessa $\mathcal{O}(N^k)$, jossa $k$ käytettävän Taylor-approksimaation aste), koska sitä voidaan approksimoida lausekkeella
+\[
+\boldsymbol{\Sigma} \approx \frac{1}{n-1} \sum_{i=1}^n \left( \boldsymbol{\psi}^f - \overline{\boldsymbol{\psi}^f} \right) \left(\boldsymbol{\psi}^f - \overline{\boldsymbol{\psi}^f}  \right)^\mathrm{T}
+\]
+\end{itemize}
+
 \end{frame}
 
 \end{document}
