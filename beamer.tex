@@ -222,9 +222,90 @@ $N=M=2,~\mathbf{M} = \mathbf{I},~\boldsymbol{\Sigma} = \sigma\mathbf{I}$
 \item Aikakehitetään näin saadun \emph{kokoelman} jokaista tilaa erikseen operaattorin $\boldsymbol{G}$ avulla
 \item Etu: Estimaatin kovarianssimatriisia ei tarvitse aikakehittää (lineaarisessa $\mathcal{O}(N)$, epälineaarisessa $\mathcal{O}(N^k)$, jossa $k$ käytettävän Taylor-approksimaation aste), koska sitä voidaan approksimoida lausekkeella
 \[
-\boldsymbol{\Sigma} \approx \frac{1}{n-1} \sum_{i=1}^n \left( \boldsymbol{\psi}^f - \overline{\boldsymbol{\psi}^f} \right) \left(\boldsymbol{\psi}^f - \overline{\boldsymbol{\psi}^f}  \right)^\mathrm{T}
+\boldsymbol{\Sigma} \approx \frac{1}{n-1} \sum_{j=1}^n \left( \boldsymbol{\psi}^f_j - \overline{\boldsymbol{\psi}^f} \right) \left(\boldsymbol{\psi}^f_j - \overline{\boldsymbol{\psi}^f}  \right)^\mathrm{T}
 \]
 \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Ensemble Kalman Filter, esimerkki}
+
+\begin{figure}
+\includegraphics[width=11cm]{enkf3.pdf}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Ensemble Kalman Filter, esimerkki jatkuu}
+
+\begin{figure}
+\includegraphics[width=11cm]{enkf4.pdf}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Ensemble Kalman Filter, analyysiongelma}
+
+\begin{itemize}
+\item Tyypillisesti mittadataa muulloinkin, kuin alkuhetkellä
+\item Analyysiongelma: \emph{Miten yhdistää optimaalisesti mallin ennuste $\boldsymbol{\psi}^f$ ja uusi mittaus $\boldsymbol{d}$?}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Ensemble Kalman Filter, analyysiongelma 2}
+
+\begin{figure}
+\includegraphics[width=11cm]{enkf5.pdf}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Ensemble Kalman Filter, analyysiongelma 3}
+
+\begin{figure}
+\includegraphics[width=5.5cm]{enkf6.pdf}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Ensemble Kalman Filter, analyysiongelma 4}
+
+\begin{figure}
+\includegraphics[width=5.5cm]{enkf7.pdf}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Ensemble Kalman Filter, analyysiongelman ratkaisu}
+
+\begin{itemize}
+\item \emph{Analysoitu tila} $\boldsymbol{\psi}^a = \boldsymbol{\psi}^f + K\left(\boldsymbol{d}-\boldsymbol{\psi}^f\right)$
+\begin{itemize}
+\item Jos varianssit samat, $K = \frac{1}{2}$
+\item Tässä tapauksessa \[ K = \frac{\sigma_\psi}{\sigma_\psi+\sigma_d} \]
+\item Yleisesti \[ \mathbf{K} = \frac{\boldsymbol{\Sigma}_\psi}{\boldsymbol{\Sigma}_\psi+\boldsymbol{\Sigma}_d} \]
+\end{itemize}
+\item Jos lisätään vielä mahdollisuus $N > M$, niin 
+\[
+\boldsymbol{\psi}^a = \boldsymbol{\psi}^f + \boldsymbol{\Sigma}_\psi \mathbf{M}^\mathrm{T} \left(\boldsymbol{\Sigma}_d+\mathbf{M}\boldsymbol{\Sigma}_\psi\mathbf{M}^\mathrm{T}\right)^{-1}\left(\boldsymbol{d}-\mathbf{M}\boldsymbol{\psi}^f\right)
+\]
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Ensemble Kalman Filter, parametrien estimointi}
+
+\begin{itemize}
+\item Jatketaan tilaa huonosti tunnetuilla parametreilla $\boldsymbol{\alpha}$
+\[ \boldsymbol{\hat{\psi}}^f = \left(\boldsymbol{\psi}^f,~\boldsymbol{\alpha}\right)^\mathrm{T} \]
+\item Karsitaan lisätyt parametrit vertailuista mitattujen arvojen kanssa muokkaamalla mittamatriisia
+\item $\rightarrow$ Estimoitavat parametrit loksahtavat kohdalleen automaattisesti!
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Takaisin ongelmaan}
 
 \end{frame}
 
