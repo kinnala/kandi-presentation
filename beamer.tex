@@ -84,7 +84,7 @@
 
 \begin{itemize}
 \item Pyritään estimoimaan kitkakerroin $\mu$
-\item \emph{A priori} -tietona $x$-suuntaiset jännitykset mittapisteissä\\($\sim$ venymäliuskamittaus)
+\item Etukäteistietona $x$-suuntaiset jännitykset mittapisteissä\\($\sim$ venymäliuskamittaus)
 \end{itemize}
 
 \begin{figure}
@@ -125,8 +125,8 @@
 
 \begin{itemize}
 \item Estimoitava suure: Kitkakerroin $\mu=0{,}5$
-\item \emph{A priori} -tieto: $x$-suuntaiset jännitykset mittapisteissä
-\item Menetelmät: \emph{Data-assimilaatio}
+\item Etukäteistieto: $x$-suuntaiset jännitykset mittapisteissä
+\item \emph{Data-assimilaatio}
 \end{itemize}
 
 \end{frame}
@@ -220,7 +220,7 @@ $N=M=2,~\mathbf{M} = \mathbf{I},~\boldsymbol{\Sigma} = \sigma\mathbf{I}$
 \begin{itemize}
 \item Idea: Otetaan $n$-kappaletta realisaatioita alkutilan normaalijakaumasta
 \item Aikakehitetään näin saadun \emph{kokoelman} jokaista tilaa erikseen operaattorin $\boldsymbol{G}$ avulla
-\item Etu: Estimaatin kovarianssimatriisia ei tarvitse aikakehittää (lineaarisessa $\mathcal{O}(N)$, epälineaarisessa $\mathcal{O}(N^k)$, jossa $k$ käytettävän Taylor-approksimaation aste), koska sitä voidaan approksimoida lausekkeella
+\item Etu: Estimaatin kovarianssimatriisia ei tarvitse aikakehittää (raskasta), koska sitä voidaan approksimoida lausekkeella
 \[
 \boldsymbol{\Sigma} \approx \frac{1}{n-1} \sum_{j=1}^n \left( \boldsymbol{\psi}^f_j - \overline{\boldsymbol{\psi}^f} \right) \left(\boldsymbol{\psi}^f_j - \overline{\boldsymbol{\psi}^f}  \right)^\mathrm{T}
 \]
@@ -284,7 +284,7 @@ $N=M=2,~\mathbf{M} = \mathbf{I},~\boldsymbol{\Sigma} = \sigma\mathbf{I}$
 \begin{itemize}
 \item Jos varianssit samat, $K = \frac{1}{2}$
 \item Tässä tapauksessa \[ K = \frac{\sigma_\psi}{\sigma_\psi+\sigma_d} \]
-\item Yleisesti \[ \mathbf{K} = \frac{\boldsymbol{\Sigma}_\psi}{\boldsymbol{\Sigma}_\psi+\boldsymbol{\Sigma}_d} \]
+\item Yleisesti \[ \mathbf{K} = \boldsymbol{\Sigma}_\psi\left(\boldsymbol{\Sigma}_\psi+\boldsymbol{\Sigma}_d\right)^{-1} \]
 \end{itemize}
 \item Jos lisätään vielä mahdollisuus $N > M$, niin 
 \[
@@ -317,7 +317,7 @@ $N=M=2,~\mathbf{M} = \mathbf{I},~\boldsymbol{\Sigma} = \sigma\mathbf{I}$
 
 \begin{itemize}
 \item Alussa ei jännityksiä, joten alkutilan määrää ainoastaan $\mu_0 = 0{,}6$
-\item Oletetaan jokin virhe; tässä $\sigma_0 = 0{,}1$
+\item Oletetaan jokin virhe; tässä $\sigma_0 = 0{,}1$ (myös mittavirheen keskihajonta)
 \item Päätetään kokoelman koko, esim. $n=200$
 \item Generoidaan alkukokoelma jakaumasta $\mathcal{N}(\mu_0,\sigma_0^2)$
 \item Alkukokoelman yksittäinen tila muotoa
@@ -325,6 +325,8 @@ $N=M=2,~\mathbf{M} = \mathbf{I},~\boldsymbol{\Sigma} = \sigma\mathbf{I}$
 \boldsymbol{\psi}_j = (\underbrace{0, 0, \dots, 0, 0,}_{N~\text{kpl}} \mu_0 + \epsilon )^\mathrm{T},~j=1,\dots,n
 \]
 \item Mitta"hetket": Yläreunan siirtymä $\Delta x = 7,14,21,\dots,70$
+\item Simuloidaan seuraavaan mittahetkeen asti ja yhteensulautetaan mittaus ja kokoelma $\Rightarrow$ kitkakertoimen estimaatti
+\item Mittahetkiä 10, estimaatteja 10
 \end{itemize}
 
 \end{frame}
@@ -332,8 +334,60 @@ $N=M=2,~\mathbf{M} = \mathbf{I},~\boldsymbol{\Sigma} = \sigma\mathbf{I}$
 \begin{frame}{Simulointi kuvina}
 
 \begin{figure}
-\includegraphics[width=10cm]{alkukokoelma.pdf}
+\includegraphics[width=10cm]{alkukokoelma2.pdf}
 \end{figure}
+
+\end{frame}
+
+\begin{frame}{Tuloksia, ilman mallivirhettä (20, 200)}
+
+\begin{figure}
+\includegraphics[width=7cm]{xxx_20_no_model_error.pdf}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=7cm]{xxx_200_no_model_error.pdf}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Tuloksia, mallivirheellä (200, 1000)}
+
+\begin{figure}
+\includegraphics[width=7cm]{xxx_200_model_error.pdf}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=7cm]{xxx_1000_model_error.pdf}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Kokoelman koon vaikutus, keskiarvo (2-6-10)}
+
+\begin{figure}
+\includegraphics[width=9cm]{mean_conv_2_6_10.pdf}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Kokoelman koon vaikutus, kokoelman hajonta (2-6-10)}
+
+\begin{figure}
+\includegraphics[width=9cm]{ensemble_stdev.pdf}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Kokoelman koon vaikutus, peräkkäisten analyysien hajonta (2-6-10)}
+
+\begin{figure}
+\includegraphics[width=9cm]{stdev_between_analysis.pdf}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Yhteenveto}
 
 \end{frame}
 
