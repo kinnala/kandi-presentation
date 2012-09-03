@@ -305,7 +305,35 @@ $N=M=2,~\mathbf{M} = \mathbf{I},~\boldsymbol{\Sigma} = \sigma\mathbf{I}$
 
 \end{frame}
 
+\begin{frame}{Ensemble Kalman Filter, yhteenveto}
+
+\begin{figure}
+\includegraphics[width=5.5cm]{enkf_luuppi.pdf}
+\end{figure}
+
+\end{frame}
+
 \begin{frame}{Takaisin ongelmaan}
+
+\begin{itemize}
+\item Alussa ei jännityksiä, joten alkutilan määrää ainoastaan $\mu_0 = 0{,}6$
+\item Oletetaan jokin virhe; tässä $\sigma_0 = 0{,}1$
+\item Päätetään kokoelman koko, esim. $n=200$
+\item Generoidaan alkukokoelma jakaumasta $\mathcal{N}(\mu_0,\sigma_0^2)$
+\item Alkukokoelman yksittäinen tila muotoa
+\[
+\boldsymbol{\psi}_j = (\underbrace{0, 0, \dots, 0, 0,}_{N~\text{kpl}} \mu_0 + \epsilon )^\mathrm{T},~j=1,\dots,n
+\]
+\item Mitta"hetket": Yläreunan siirtymä $\Delta x = 7,14,21,\dots,70$
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Simulointi kuvina}
+
+\begin{figure}
+\includegraphics[width=10cm]{alkukokoelma.pdf}
+\end{figure}
 
 \end{frame}
 
