@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.5)  3 SEP 2012 18:00
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.4.5)  3 SEP 2012 18:08
 entering extended mode
  %&-line parsing enabled.
 **beamer.tex
@@ -1240,18 +1240,20 @@ File: mean_conv_2_6_10.pdf Graphic file (type pdf)
 <use mean_conv_2_6_10.pdf> [31
 
  <./mean_conv_2_6_10.pdf>]
-<ensemble_stdev.pdf, id=1018, 493.845pt x 375.4025pt>
+<ensemble_stdev.pdf, id=1019, 493.845pt x 375.4025pt>
 File: ensemble_stdev.pdf Graphic file (type pdf)
  <use ensemble_stdev.pdf>
 [32
 
  <./ensemble_stdev.pdf>]
-<stdev_between_analysis.pdf, id=1046, 487.8225pt x 375.4025pt>
+<stdev_between_analysis.pdf, id=1047, 487.8225pt x 375.4025pt>
 File: stdev_between_analysis.pdf Graphic file (type pdf)
 
 <use stdev_between_analysis.pdf> [33
 
- <./stdev_between_analysis.pdf>]
+ <./stdev_between_analysis.pdf>] [34
+
+]
 \tf@nav=\write5
 \openout5 = `beamer.nav'.
 
@@ -1269,10 +1271,10 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 13667 strings out of 494799
- 236961 string characters out of 1177749
+ 13671 strings out of 494799
+ 236996 string characters out of 1177749
  319619 words of memory out of 3000000
- 16350 multiletter control sequences out of 15000+50000
+ 16352 multiletter control sequences out of 15000+50000
  41103 words of font info for 93 fonts, out of 3000000 for 9000
  212 hyphenation exceptions out of 8191
  45i,15n,57p,341b,549s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1300,9 +1302,9 @@ ublic/cm-super/sfss0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1
 texmf/fonts/type1/public/cm-super/sfss1440.pfb></usr/share/texmf/fonts/type1/pu
 blic/cm-super/sfsx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx10
 95.pfb>
-Output written on beamer.pdf (33 pages, 2800691 bytes).
+Output written on beamer.pdf (34 pages, 2806449 bytes).
 PDF statistics:
- 1178 PDF objects out of 1200 (max. 8388607)
- 67 named destinations out of 1000 (max. 500000)
+ 1204 PDF objects out of 1440 (max. 8388607)
+ 69 named destinations out of 1000 (max. 500000)
  210 words of extra memory for PDF output out of 10000 (max. 10000000)
 
