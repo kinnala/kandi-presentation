@@ -2,6 +2,7 @@
 \usepackage[finnish]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage{tikz}
 \usetheme{Warsaw}
 \title[Data-assimilaatio kitkamallissa]{Data-assimilaatio kitkamallissa}
 \author{Tom Gustafsson}
@@ -131,6 +132,27 @@
 
 \end{frame}
 
+\begin{frame}{Ennen kuin jatketaan}
+
+\begin{figure}
+\includegraphics[width=5cm]{2dnormal.pdf}
+$\rightarrow$
+\includegraphics[width=5cm]{2dcontour.pdf}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Ennen kuin jatketaan 2}
+
+\begin{itemize}
+\item Useampiulotteisen normaalijakauman karakterisoi kovarianssimatriisi $\boldsymbol{\Sigma}$
+\item $\mathcal{N}_k(\boldsymbol{\mu}_0,\boldsymbol{\Sigma})$, jossa $\boldsymbol{\Sigma} \in \mathbb{R}^{k \times k}$
+\item Neliömatriisi, diagonaalilla varianssit eri dimensioissa
+\item Muut alkiot kertovat dimensioiden välisen kovarianssin
+\end{itemize}
+
+\end{frame}
+
 \begin{frame}{Data-assimilaatio}
 
 \begin{itemize}
@@ -168,16 +190,6 @@
 
 \end{frame}
 
-\begin{frame}{Data-assimilaatio, esimerkki}
-
-$N=M=2,~\mathbf{M} = \mathbf{I},~\boldsymbol{\Sigma} = \sigma\mathbf{I}$
-
-\begin{figure}
-\includegraphics[width=6cm]{enkf1.pdf}
-\end{figure}
-
-\end{frame}
-
 \begin{frame}{Data-assimilaatio, yleistä 2}
 
 \begin{itemize}
@@ -188,15 +200,36 @@ $N=M=2,~\mathbf{M} = \mathbf{I},~\boldsymbol{\Sigma} = \sigma\mathbf{I}$
 \]
 \begin{itemize}
 \item Malli epätäydellinen, eli estimaatin virhe kasvaa aikakehitettäessä
+\item Virheen kasvua kuvaa kovarianssimatriisi $\mathbf{Q}$
 \end{itemize}
 \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Data-assimilaatio, esimerkki}
+
+$N=M=2,~\mathbf{M} = \mathbf{I},~\boldsymbol{\Sigma} = \sigma\mathbf{I}$
+
+\begin{figure}
+\begin{tikzpicture}
+\node[above right] (img) at (0,0) {\includegraphics[width=6cm]{enkf1.pdf}};
+\node at (100pt,90pt) {$\boldsymbol{\psi}^f_{t_0}$};
+\node at (135pt,40pt) {$\boldsymbol{\psi}^t_{t_0}$};
+\end{tikzpicture}
+\end{figure}
 
 \end{frame}
 
 \begin{frame}{Data-assimilaatio, esimerkki 2}
 
 \begin{figure}
-\includegraphics[width=11cm]{enkf2.pdf}
+\begin{tikzpicture}
+\node[above right] (img) at (0,0) {\includegraphics[width=11cm]{enkf2.pdf}};
+\node at (47pt,86pt) {$\small \boldsymbol{\psi}^f_{t_0}$};
+\node at (60pt,65pt) {$\small \boldsymbol{\psi}^t_{t_0}$};
+\node at (255pt,80pt) {$\small \boldsymbol{\psi}^f_{t_1}$};
+\node at (255pt,30pt) {$\small \boldsymbol{\psi}^t_{t_1}$};
+\end{tikzpicture}
 \end{figure}
 
 \end{frame}
@@ -209,7 +242,7 @@ $N=M=2,~\mathbf{M} = \mathbf{I},~\boldsymbol{\Sigma} = \sigma\mathbf{I}$
 \[
 \frac{\partial f}{\partial t} + \sum_{i=1}^N \frac{\partial \left ( G_i f \right )}{\partial \psi_i} = \frac{1}{2} \sum_{i=1}^N \sum_{j=1}^N \frac{\partial^2 \left ( Q_{ij} f \right )}{\partial \psi_i \partial \psi_j}
 \]
-\item \emph{Hurja}, mutta ei niin hurja miltä näyttää (sij. $\mathbf{G} = \mathbf{0}$ ja $\mathbf{Q} = \mathbf{I}$) 
+%\item \emph{Hurja}, mutta ei niin hurja miltä näyttää (sij. $\mathbf{G} = \mathbf{0}$ ja $\mathbf{Q} = \mathbf{I}$) 
 \item Yleinen tapaus ei ratkea analyyttisesti $\rightarrow$ EnKF
 \end{itemize}
 
@@ -387,12 +420,8 @@ $N=M=2,~\mathbf{M} = \mathbf{I},~\boldsymbol{\Sigma} = \sigma\mathbf{I}$
 
 \end{frame}
 
-\begin{frame}{Lisää tutkittavaa?}
+\begin{frame}{Kysymyksiä?}
 
-\begin{itemize}
-\item Elastiset FEM-mallit ja analysoidun tilan aikakehittäminen
-\item   
-\end{itemize}
 
 \end{frame}
 
