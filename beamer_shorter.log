@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.7.31)  17 SEP 2012 17:32
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.7.19)  19 SEP 2012 16:01
 entering extended mode
  %&-line parsing enabled.
 **beamer_shorter.tex
@@ -1125,17 +1125,9 @@ File: fretting_geom_meas.pdf Graphic file (type pdf)
 
 <use fretting_geom_meas.pdf> [7
 
- <./fretting_geom_meas.pdf>]
-<2dnormal.pdf, id=270, 260.17201pt x 207.43297pt>
-File: 2dnormal.pdf Graphic file (type pdf)
- <use 2dnormal.pdf>
-<2dcontour.pdf, id=271, 260.17201pt x 293.45232pt>
-File: 2dcontour.pdf Graphic file (type pdf)
- <use 2dcontour.pdf> [8
+ <./fretting_geom_meas.pdf>] [8
 
- <./2dnormal.pdf> <./2dcontour.pdf>] [9
-
-] [10
+] [9
 
 ]
 
@@ -1145,143 +1137,19 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.190 \end{frame}
+l.213 \end{frame}
                  
 ? 
-[11
+[10
 
-] [12
-
-] <enkf1.pdf, id=428, 288.88527pt x 288.88527pt>
-File: enkf1.pdf Graphic file (type pdf)
- <use enkf1.pdf>
-[13
-
- <./enkf1.pdf>] <enkf2.pdf, id=461, 560.35245pt x 260.34064pt>
-File: enkf2.pdf Graphic file (type pdf)
-
-<use enkf2.pdf>
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 238.
-
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 238.
-
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 238.
-
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 238.
-
-
-Overfull \hbox (12.94298pt too wide) in paragraph at lines 238--238
- [] 
- []
-
-[14
-
- <./enkf2.pdf>] [15
-
-]
-
-! Package inputenc Error: Unicode char \u8:  not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.265 \end{frame}
-                 
-? 
-[16
-
-] <enkf3.pdf, id=546, 560.35245pt x 260.34064pt>
-File: enkf3.pdf Graphic file (type pdf)
- <use enkf3.pdf>
-Overfull \hbox (5.69043pt too wide) in paragraph at lines 273--273
- [] 
- []
-
-[17
-
- <./enkf3.pdf>] <enkf4.pdf, id=577, 560.35245pt x 285.77667pt>
-File: enkf4.pdf Graphic file (type pdf)
-
-<use enkf4.pdf>
-Overfull \hbox (5.69043pt too wide) in paragraph at lines 281--281
- [] 
- []
-
-[18
-
- <./enkf4.pdf>] [19
-
-] <enkf5.pdf, id=635, 560.35245pt x 349.77473pt>
-File: enkf5.pdf Graphic file (type pdf)
-
-<use enkf5.pdf>
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 305.
-
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 305.
-
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 305.
-
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 305.
-
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 305.
-
-
-Overfull \hbox (12.94298pt too wide) in paragraph at lines 305--305
- [] 
- []
-
-[20
-
- <./enkf5.pdf>] <enkf6.pdf, id=666, 343.54248pt x 454.89247pt>
-File: enkf6.pdf Graphic file (type pdf)
-
-<use enkf6.pdf>
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 318.
-
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 318.
-
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 318.
-
-[21
-
- <./enkf6.pdf>] [22
-
-] [23
-
-]
-
-! Package inputenc Error: Unicode char \u8:  not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.358 \end{frame}
-                 
-? 
-[24
-
-] <enkf_luuppi.pdf, id=779, 251.21855pt x 402.39336pt>
+] <enkf_luuppi.pdf, id=360, 251.21855pt x 402.39336pt>
 File: enkf_luuppi.pdf Graphic file (type pdf)
 
 <use enkf_luuppi.pdf>
-Overfull \vbox (29.23808pt too high) detected at line 366
+Overfull \vbox (29.23808pt too high) detected at line 221
  []
 
-[25
+[11
 
  <./enkf_luuppi.pdf>]
 File: anim1.pdf Graphic file (type pdf)
@@ -1290,7 +1158,7 @@ File: anim3.pdf Graphic file (type pdf)
  <use anim3.pdf>
 File: anim5.pdf Graphic file (type pdf)
  <use anim5.pdf>
-[26
+[12
 
 ]
 
@@ -1300,63 +1168,63 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.421 \end{frame}
+l.276 \end{frame}
                  
 ? 
-[27
+[13
 
-] <finer_mesh.pdf, id=889, 823.075pt x 411.5375pt>
+] <finer_mesh.pdf, id=475, 823.075pt x 411.5375pt>
 File: finer_mesh.pdf Graphic file (type pdf)
  <use finer_mesh.pdf>
-[28
+[14
 
  <./finer_mesh.pdf>]
-<fretting_meas_tarkempi.pdf, id=918, 421.575pt x 352.20586pt>
+<fretting_meas_tarkempi.pdf, id=504, 421.575pt x 352.20586pt>
 File: fretting_meas_tarkempi.pdf Graphic file (type pdf)
 
 <use fretting_meas_tarkempi.pdf>
-Overfull \vbox (16.27818pt too high) detected at line 445
+Overfull \vbox (16.27818pt too high) detected at line 300
  []
 
-[29
+[15
 
  <./fretting_meas_tarkempi.pdf>]
-<xxx_20_no_model_error.pdf, id=947, 435.6275pt x 221.82875pt>
+<xxx_20_no_model_error.pdf, id=533, 435.6275pt x 221.82875pt>
 File: xxx_20_no_model_error.pdf Graphic file (type pdf)
 
 <use xxx_20_no_model_error.pdf>
-<xxx_200_no_model_error.pdf, id=949, 435.6275pt x 221.82875pt>
+<xxx_200_no_model_error.pdf, id=535, 435.6275pt x 221.82875pt>
 File: xxx_200_no_model_error.pdf Graphic file (type pdf)
 
-<use xxx_200_no_model_error.pdf> [30
+<use xxx_200_no_model_error.pdf> [16
 
  <./xxx_20_no_model_error.pdf> <./xxx_200_no_model_error.pdf>]
 File: xxx_200_no_model_error.pdf Graphic file (type pdf)
  <use xxx_200_no_model_error.pdf>
-<xxx_200_model_error.pdf, id=981, 435.6275pt x 221.82875pt>
+<xxx_200_model_error.pdf, id=567, 435.6275pt x 221.82875pt>
 File: xxx_200_model_error.pdf Graphic file (type pdf)
 
-<use xxx_200_model_error.pdf> [31
+<use xxx_200_model_error.pdf> [17
 
  <./xxx_200_model_error.pdf>]
-<mean_conv_2_6_10.pdf, id=1012, 482.80376pt x 369.38pt>
+<mean_conv_2_6_10.pdf, id=597, 482.80376pt x 369.38pt>
 File: mean_conv_2_6_10.pdf Graphic file (type pdf)
 
-<use mean_conv_2_6_10.pdf> [32
+<use mean_conv_2_6_10.pdf> [18
 
  <./mean_conv_2_6_10.pdf>]
-<ensemble_stdev.pdf, id=1041, 493.845pt x 375.4025pt>
+<ensemble_stdev.pdf, id=626, 493.845pt x 375.4025pt>
 File: ensemble_stdev.pdf Graphic file (type pdf)
  <use ensemble_stdev.pdf>
-[33
+[19
 
  <./ensemble_stdev.pdf>]
-<stdev_between_analysis.pdf, id=1070, 487.8225pt x 375.4025pt>
+<stdev_between_analysis.pdf, id=656, 487.8225pt x 375.4025pt>
 File: stdev_between_analysis.pdf Graphic file (type pdf)
 
-<use stdev_between_analysis.pdf> [34
+<use stdev_between_analysis.pdf> [20
 
- <./stdev_between_analysis.pdf>] [35
+ <./stdev_between_analysis.pdf>] [21
 
 ]
 \tf@nav=\write6
@@ -1376,43 +1244,39 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 15562 strings out of 494799
- 277087 string characters out of 1177748
+ 15449 strings out of 494799
+ 275837 string characters out of 1177748
  357879 words of memory out of 3000000
- 18195 multiletter control sequences out of 15000+50000
- 45021 words of font info for 102 fonts, out of 3000000 for 9000
+ 18124 multiletter control sequences out of 15000+50000
+ 39857 words of font info for 90 fonts, out of 3000000 for 9000
  212 hyphenation exceptions out of 8191
  45i,15n,57p,349b,638s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf-
-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fon
-ts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/pu
-blic/amsfonts/cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
-s/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmib10
-.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/
-share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf
--texlive/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-texlive/fon
-ts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-texlive/fonts/type1/
-public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsf
-onts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy
-8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-</usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fo
-nts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-
-super/sfsi0700.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsi0800.pfb><
-/usr/share/texmf/fonts/type1/public/cm-super/sfsi1000.pfb></usr/share/texmf/fon
-ts/type1/public/cm-super/sfsi1095.pfb></usr/share/texmf/fonts/type1/public/cm-s
-uper/sfsi1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfso1000.pfb></
-usr/share/texmf/fonts/type1/public/cm-super/sfso1095.pfb></usr/share/texmf/font
-s/type1/public/cm-super/sfss0500.pfb></usr/share/texmf/fonts/type1/public/cm-su
-per/sfss0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss0700.pfb></u
-sr/share/texmf/fonts/type1/public/cm-super/sfss0800.pfb></usr/share/texmf/fonts
-/type1/public/cm-super/sfss1000.pfb></usr/share/texmf/fonts/type1/public/cm-sup
-er/sfss1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1440.pfb></us
-r/share/texmf/fonts/type1/public/cm-super/sfsx1000.pfb></usr/share/texmf/fonts/
-type1/public/cm-super/sfsx1095.pfb></usr/share/texmf/fonts/type1/public/cm-supe
-r/sfsx1440.pfb>
-Output written on beamer_shorter.pdf (35 pages, 3040967 bytes).
+pdfTeX warning (dest): name{Navigation22} has been referenced but does not ex
+ist, replaced by a fixed one
+
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf-te
+xlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts
+/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/publ
+ic/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
+cm/cmmib10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss10.
+pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/s
+hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texm
+f-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/f
+onts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/p
+ublic/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super
+/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsi0800.pfb></usr/
+share/texmf/fonts/type1/public/cm-super/sfsi1000.pfb></usr/share/texmf/fonts/ty
+pe1/public/cm-super/sfsi1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/
+sfsi1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfso1095.pfb></usr/s
+hare/texmf/fonts/type1/public/cm-super/sfss0600.pfb></usr/share/texmf/fonts/typ
+e1/public/cm-super/sfss0700.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
+fss0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1000.pfb></usr/sh
+are/texmf/fonts/type1/public/cm-super/sfss1095.pfb></usr/share/texmf/fonts/type
+1/public/cm-super/sfss1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
+sx1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1440.pfb>
+Output written on beamer_shorter.pdf (21 pages, 1182917 bytes).
 PDF statistics:
- 1238 PDF objects out of 1440 (max. 8388607)
- 71 named destinations out of 1000 (max. 500000)
- 205 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 797 PDF objects out of 1000 (max. 8388607)
+ 44 named destinations out of 1000 (max. 500000)
+ 165 words of extra memory for PDF output out of 10000 (max. 10000000)
 

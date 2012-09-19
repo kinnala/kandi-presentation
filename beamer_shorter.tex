@@ -13,10 +13,10 @@
 \titlepage
 \end{frame}
 
-\begin{frame}{The problem}
+\begin{frame}{Question}
 
 \begin{itemize}
-\item Can we estimate weakly known parameters from a simple friction model by using tools of data assimilation?
+\item Is it possible to estimate weakly known parameters from a simple elastic friction model by using the tools of data assimilation?
 \end{itemize}
 
 \begin{figure}
@@ -28,7 +28,7 @@
 \begin{frame}{Model, 2D}
 
 \begin{itemize}
-\item Initial setting: Block, surface
+\item Initial setting: Block, slab
 \item Boundary conditions
 \end{itemize}
 
@@ -85,7 +85,7 @@
 
 \begin{itemize}
 \item Attempting to estimate friction coefficient $\mu$
-\item As \emph{a priori} knowledge: $x$-directional stress in chosen measurement points\\($\sim$ strain gauge)
+\item As \emph{a priori} data: $x$ directional stress in chosen measurement points\\($\sim$ strain gauge)
 \end{itemize}
 
 \begin{figure}
@@ -153,188 +153,43 @@
 
 %\end{frame}
 
-%\begin{frame}{Data-assimilaatio}
+\begin{frame}{Data assimilation}
 
-%\begin{itemize}
-%\item Pohjimmiltaan havaintojen ja mallin tuotaman informaation yhteensulauttamista
-%\item Perinteisiä sovelluskohteita: Säähavaintomallit, valtamerimallit
-%\item Data-assimilaation menetelmiä
-%\begin{itemize}
-%\item 3DVar, 4DVar
-%\item Kalman Filter, Extended-, Ensemble-, ...
-%\item ...
-%\end{itemize}
-%\item Tässä työssä \emph{Ensemble Kalman Filter}, eli EnKF
-%\end{itemize}
+\begin{itemize}
+\item Gives an answer to the problem: How to merge measurement and model data in an optimal way?
+\item Traditional applications: Weather prediction, oceanography
+\item Multiple different methods: 3D- and 4DVar, the family of Kalman filters, ...
+\item In this work \emph{Ensemble Kalman Filter}
+\end{itemize}
 
-%\end{frame}
+\end{frame}
 
 %\begin{frame}{Data-assimilaatio, yleistä}
 
 %\begin{itemize}
 %\item Systeemin (todellinen) tila $\boldsymbol{\psi}^t \in \mathbb{R}^N$
 %\item Mittaus $\boldsymbol{d} \in \mathbb{R}^M$
-\begin{itemize}
-\item Ei tarkka
-\item Suhde tilaan $\boldsymbol{d} = \mathbf{M}\boldsymbol{\psi}^t+\boldsymbol{\epsilon}$
-\item Mittamatriisi $\mathbf{M} \in \mathbb{R}^{M \times N}$
-\item Virhe $\boldsymbol{\epsilon} \sim \mathcal{N}_M(0,\boldsymbol{\Sigma})$
-\item Kovarianssimatriisi $\boldsymbol{\Sigma} \in \mathbb{R}^{M \times M}$
-\end{itemize}
-\item Ennustettu tila $\boldsymbol{\psi}^f \in \mathbb{R}^N$
-\begin{itemize}
-\item Aluksi esim. mittauksien perusteella
-\end{itemize}
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}{Data-assimilaatio, yleistä 2}
-
-\begin{itemize}
-\item Todellinen tila $\boldsymbol{\psi}^t$ muuttuu ajan kuluessa
-\item Systeemin malli
-\[
-\boldsymbol{\dot{\psi}} = \boldsymbol{G}(\boldsymbol{\psi},t)
-\]
-\item Aikakehitys:
-\[
-\boldsymbol{\psi}^f_{t+\Delta t} = \boldsymbol{\psi}^f_t + \int_{t}^{t+\Delta t} \! \boldsymbol{G}(\boldsymbol{\psi},t) \, \mathrm{d}t
-\]
-\begin{itemize}
-\item Malli epätäydellinen, eli ennusteen virhe kasvaa aikakehitettäessä
-\item Virheen kasvua kuvaa kovarianssimatriisi $\mathbf{Q}$
-\end{itemize}
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}{Data-assimilaatio, esimerkki}
-
-$N=M=2,~\mathbf{M} = \mathbf{I},~\boldsymbol{\Sigma} = \sigma\mathbf{I}$
-
-\begin{figure}
-\begin{tikzpicture}
-\node[above right] (img) at (0,0) {\includegraphics[width=6cm]{enkf1.pdf}};
-\node at (100pt,90pt) {$\boldsymbol{\psi}^f_{t_0}$};
-\node at (135pt,40pt) {$\boldsymbol{\psi}^t_{t_0}$};
-\end{tikzpicture}
-\end{figure}
-
-\end{frame}
-
-\begin{frame}{Data-assimilaatio, esimerkki 2}
-
-\begin{figure}
-\begin{tikzpicture}
-\node[above right] (img) at (0,0) {\includegraphics[width=11cm]{enkf2.pdf}};
-\node at (47pt,86pt) {$\small \boldsymbol{\psi}^f_{t_0}$};
-\node at (60pt,65pt) {$\small \boldsymbol{\psi}^t_{t_0}$};
-\node at (255pt,80pt) {$\small \boldsymbol{\psi}^f_{t_1}$};
-\node at (255pt,30pt) {$\small \boldsymbol{\psi}^t_{t_1}$};
-\end{tikzpicture}
-\end{figure}
-
-\end{frame}
-
-\begin{frame}{Data-assimilaatio, yleistä 3}
-
-\begin{itemize}
-\item Tulkitaan normaalijakauma todennäköisyystiheysfunktiona $f(\boldsymbol{\psi},t)$
-\item Tällöin $f$:n aikakehitystä kuvaa \emph{Fokker-Planck -yhtälö}
-\[
-\frac{\partial f}{\partial t} + \sum_{i=1}^N \frac{\partial \left ( G_i f \right )}{\partial \psi_i} = \frac{1}{2} \sum_{i=1}^N \sum_{j=1}^N \frac{\partial^2 \left ( Q_{ij} f \right )}{\partial \psi_i \partial \psi_j}
-\]
-%\item \emph{Hurja}, mutta ei niin hurja miltä näyttää (sij. $\mathbf{G} = \mathbf{0}$ ja $\mathbf{Q} = \mathbf{I}$) 
-\item Yleinen tapaus ei ratkea analyyttisesti $\rightarrow$ EnKF
-\end{itemize}
-
-\end{frame}
+%\begin{itemize}
+%\item Ei tarkka
+%\item Suhde tilaan $\boldsymbol{d} = \mathbf{M}\boldsymbol{\psi}^t+\boldsymbol{\epsilon}$
+%\item Mittamatriisi $\mathbf{M} \in \mathbb{R}^{M \times N}$
+%\item Virhe $\boldsymbol{\epsilon} \sim \mathcal{N}_M(0,\boldsymbol{\Sigma})$
+%\item Kovarianssimatriisi $\boldsymbol{\Sigma} \in \mathbb{R}^{M \times M}$
+%\end{itemize}
+%\item Ennustettu tila $\boldsymbol{\psi}^f \in \mathbb{R}^N$
+%\begin{itemize}
+%\item Aluksi esim. mittauksien perusteella
+%\end{itemize}
+%\end{itemize}
 
 \begin{frame}{Ensemble Kalman Filter}
 
 \begin{itemize}
-\item Idea: Otetaan $n$-kappaletta realisaatioita alkutilan normaalijakaumasta ($\Rightarrow$ kokoelma)
-\item Aikakehitetään näin saadun \emph{kokoelman} jokaista tilaa erikseen operaattorin $\boldsymbol{G}$ avulla
-\item Tällöin ennusteen kovarianssimatriisia voidaan approksimoida lausekkeella
-\[
-\boldsymbol{\Sigma} \approx \frac{1}{n-1} \sum_{j=1}^n \left( \boldsymbol{\psi}^f_j - \overline{\boldsymbol{\psi}^f} \right) \left(\boldsymbol{\psi}^f_j - \overline{\boldsymbol{\psi}^f}  \right)^\mathrm{T}
-\]
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}{Ensemble Kalman Filter, esimerkki}
-
-\begin{figure}
-\includegraphics[width=11cm]{enkf3.pdf}
-\end{figure}
-
-\end{frame}
-
-\begin{frame}{Ensemble Kalman Filter, esimerkki jatkuu}
-
-\begin{figure}
-\includegraphics[width=11cm]{enkf4.pdf}
-\end{figure}
-
-\end{frame}
-
-\begin{frame}{Ensemble Kalman Filter, analyysiongelma}
-
-\begin{itemize}
-\item Tyypillisesti systeemistä saadaan mittadataa mittahetkillä $t_1, t_2, t_3, \dots$
-\item Analyysiongelma: \emph{Miten yhdistää optimaalisesti mallin ennuste $\boldsymbol{\psi}^f$ ja uusi mittaus $\boldsymbol{d}$?}
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}{Ensemble Kalman Filter, analyysiongelma 2}
-
-\begin{figure}
-\begin{tikzpicture}
-\node[above right] (img) at (0,0) {\includegraphics[width=11cm]{enkf5.pdf}};
-\node at (65pt,140pt) {$\small \boldsymbol{\psi}^f_{t_0}$};
-\node at (78pt,120pt) {$\small \boldsymbol{\psi}^t_{t_0}$};
-\node at (255pt,135pt) {$\small \boldsymbol{\psi}^f_{t_1}$};
-\node at (255pt,90pt) {$\small \boldsymbol{\psi}^t_{t_1}$};
-\node at (278pt,73pt) {$\small \boldsymbol{d}_{t_1}$};
-\end{tikzpicture}
-\end{figure}
-
-\end{frame}
-
-\begin{frame}{Ensemble Kalman Filter, analyysiongelma 3}
-
-\begin{figure}
-\begin{tikzpicture}
-\node[above right] (img) at (0,0) {\includegraphics[width=5.5cm]{enkf6.pdf}};
-\node at (90pt,137pt) {$\small \boldsymbol{\psi}^f_{t_1}$};
-\node at (90pt,85pt) {$\small \boldsymbol{\psi}^t_{t_1}$};
-\node at (113pt,68pt) {$\small \boldsymbol{d}_{t_1}$};
-\end{tikzpicture}
-\end{figure}
-
-\end{frame}
-
-%\begin{frame}{Ensemble Kalman Filter, analyysiongelma 4}
-
-%\begin{figure}
-%\includegraphics[width=5.5cm]{enkf7.pdf}
-%\end{figure}
-
-%\end{frame}
-
-\begin{frame}{Ensemble Kalman Filter, analyysiongelman ratkaisu}
-
-\begin{itemize}
-\item \emph{Analysoitu tila} $\boldsymbol{\psi}^a = \boldsymbol{\psi}^f + K\left(\boldsymbol{d}-\boldsymbol{\psi}^f\right)$
-\begin{itemize}
-\item Jos varianssit samat, $K = \frac{1}{2}$
-\item Tässä tapauksessa \[ K = \frac{\sigma_\psi}{\sigma_\psi+\sigma_d} \]
-\item Yleisesti \[ \mathbf{K} = \boldsymbol{\Sigma}_\psi\left(\boldsymbol{\Sigma}_\psi+\boldsymbol{\Sigma}_d\right)^{-1} \]
-\end{itemize}
-\item \pause Jos lisätään vielä mahdollisuus $N > M$, niin 
+\item System is characterized by a bunch of state vectors $\boldsymbol{\psi} \in \mathbb{R}^n$
+\item They estimate the same \emph{true} state and their deviation characterizes the uncertainty
+\item This group of states is known as \emph{ensemble} 
+\item Each member of the ensemble is integrated forwards in time to the next measurement point
+\item After the time integration each state is merged with the measurement using
 \[
 \boldsymbol{\psi}^a = \boldsymbol{\psi}^f + \boldsymbol{\Sigma}_\psi \mathbf{M}^\mathrm{T} \left(\boldsymbol{\Sigma}_d+\mathbf{M}\boldsymbol{\Sigma}_\psi\mathbf{M}^\mathrm{T}\right)^{-1}\left(\boldsymbol{d}-\mathbf{M}\boldsymbol{\psi}^f\right)
 \]
@@ -342,17 +197,11 @@ $N=M=2,~\mathbf{M} = \mathbf{I},~\boldsymbol{\Sigma} = \sigma\mathbf{I}$
 
 \end{frame}
 
-\begin{frame}{Ensemble Kalman Filter, parametrien estimointi}
+\begin{frame}{Ensemble Kalman Filter, estimating parameters}
 
 \begin{itemize}
-\item Nyt malli on
-\[
-\boldsymbol{\dot{\psi}} = \boldsymbol{G}(\boldsymbol{\psi},t;\boldsymbol{\alpha})
-\]
-\item Käytännössä jatketaan tilaa parametreilla $\boldsymbol{\alpha}$
-\[ \boldsymbol{\hat{\psi}}^f = \left(\boldsymbol{\psi}^f,~\boldsymbol{\alpha}\right)^\mathrm{T} \]
-\item Karsitaan lisätyt parametrit vertailuista mitattujen arvojen kanssa muokkaamalla mittamatriisia
-\item $\rightarrow$ Estimoitavat parametrit loksahtavat kohdalleen ratkaistaessa analyysiongelma
+\item Using the same procedure as previously but extend each state vector with the unknown parameters
+\item Formulation of the method guarantees that the unknown parameters
 \end{itemize}
 
 \end{frame}
