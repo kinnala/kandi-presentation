@@ -58,7 +58,7 @@
 
 \end{frame}
 
-\begin{frame}{Steps of the simulation: Displacement of the block}
+\begin{frame}{Steps of the simulation: displacement of the block}
 
 \begin{itemize}
 \item Done by using boundary conditions. Thus, a "slow displacement"
@@ -71,7 +71,7 @@
 
 \end{frame}
 
-\begin{frame}{Steps of the simulation: Displacement of the block, 2}
+\begin{frame}{Steps of the simulation: displacement of the block, 2}
 
 \begin{figure}
 \includegraphics[width=10cm]{anim3.pdf}\\
@@ -201,56 +201,49 @@
 
 \begin{itemize}
 \item Using the same procedure as previously but extend each state vector with the unknown parameters
-\item Formulation of the method guarantees that the unknown parameters
+\item Formulation of the method guarantees that the unknown parameters are found
+\item Note! There must be some kind of correlation between the state and the unknown parameters
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}{Ensemble Kalman Filter, yhteenveto}
-
-\begin{figure}
-\includegraphics[width=5.5cm]{enkf_luuppi.pdf}
-\end{figure}
-
-\end{frame}
-
-\begin{frame}{Takaisin ongelmaan}
+\begin{frame}{Back to the problem}
 
 \begin{itemize}
-\item Malli
+\item Model
 \begin{figure}
 \includegraphics[width=3.3cm]{anim1.pdf}
 \includegraphics[width=3.3cm]{anim3.pdf}
 \includegraphics[width=3.3cm]{anim5.pdf}
 \end{figure}
 
-\item Estimoitava parametri $\mu$
-\item Määritellään tilaksi
+\item Estimated parameter $\mu$
+\item Define the state as
 \[
   \boldsymbol{\psi} = (\sigma_x^1, \sigma_x^2, \sigma_x^3, \dots, \sigma_x^N, \mu)^\mathrm{T}
 \]
-\item Alussa ei kosketusta $\Rightarrow$ jännitykset nollia
-\item Alkutilan määrää ainoastaan siis $\mu_0$
+\item No contact in the beginning $\Rightarrow$ all the stress components are zero
+\item Therefore, initial state is specified by $\mu_0$
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}{Takaisin ongelmaan 2}
+\begin{frame}{Back to the problem 2}
 
 \begin{itemize}
-\item Tarvitaan
+\item What we need is
 \begin{itemize}
-\item Alkuarvaus $\mu_0=0{,}6$
-\item Alkuarvauksen virhe $\sigma_0 = 0{,}1$
-\item Kokoelman koko $n=200$
-\item Alkukokoelma jakaumasta $\mathcal{N}(\mu_0,\sigma_0^2)$
+\item First-guess $\mu_0=0{,}6$
+\item Deviation for first-guess $\sigma_0 = 0{,}1$
+\item Ensemble size $n=200$
+\item Initial ensemble taken from distribution $\mathcal{N}(\mu_0,\sigma_0^2)$
 \end{itemize}
-\item Alkukokoelman yksittäinen tila on siis muotoa
+\item A single state of the initial ensemble
 \[
 \boldsymbol{\psi}_j = (\underbrace{0, 0, \dots, 0, 0,}_{N~\text{kpl}} \mu_0 + \epsilon )^\mathrm{T},~j=1,\dots,n
 \]
-\item Mitta"hetket": Yläreunan siirtymät $\Delta x = 7,14,21,\dots,70$
-\item Mittadata synteettisesti
+\item Measurement data when block's displacement is $\Delta x = 7,14,21,\dots,70$ (cm)
+\item Measurement data is synthetic
 \end{itemize}
 
 %\begin{itemize}
@@ -269,50 +262,7 @@
 
 \end{frame}
 
-\begin{frame}{Synteettisen mittadatan generointi}
-
-\begin{itemize}
-\item Minimoidaan inversiorikosta $\rightarrow$ mittadata tiheämmästä verkosta
-\end{itemize}
-
-\begin{figure}
-\includegraphics[width=10cm]{finer_mesh.pdf}
-\end{figure}
-
-\begin{itemize}
-\item Miten verrata tiheämmän ja harvemman verkon antamia jännityksiä?
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}{Synteettisen mittadatan generointi 2}
-
-\begin{figure}
-\includegraphics[width=10cm]{fretting_meas_tarkempi.pdf}
-\end{figure}
-
-\end{frame}
-
-\begin{frame}{Tuloksia, $\mathbf{Q}=\mathbf{0}$}
-
-
-\begin{figure}
-\begin{tikzpicture}
-\node[above right] (img) at (0,0) {\includegraphics[width=7cm]{xxx_20_no_model_error.pdf}};
-\node at (230pt,55pt) {$n=20$};
-\end{tikzpicture}
-\end{figure}
-\vspace{-0.5cm}
-\begin{figure}
-\begin{tikzpicture}
-\node[above right] (img) at (0,0) {\includegraphics[width=7cm]{xxx_200_no_model_error.pdf}};
-\node at (230pt,55pt) {$n=200$};
-\end{tikzpicture}
-\end{figure} 
-
-\end{frame}
-
-\begin{frame}{Tuloksia, mallivirheen vaikutus, $n=200$}
+\begin{frame}{Some results, $n=200$}
 
 \begin{figure}
 \begin{tikzpicture}
@@ -338,9 +288,9 @@
 
 \end{frame}
 
-\begin{frame}{Kokoelman koon vaikutus, keskiarvo}
+\begin{frame}{Influence of ensemble size, mean}
 
-Punainen: $\Delta x=70$, sininen: $\Delta x=42$, vihreä: $\Delta x=14$
+Red: $\Delta x=70$, blue: $\Delta x=42$, green: $\Delta x=14$
 
 \begin{figure}
 \includegraphics[width=9cm]{mean_conv_2_6_10.pdf}
@@ -348,7 +298,7 @@ Punainen: $\Delta x=70$, sininen: $\Delta x=42$, vihreä: $\Delta x=14$
 
 \end{frame}
 
-\begin{frame}{Kokoelman hajonta}
+\begin{frame}{Standard deviation of the analysed ensemble}
 
 \begin{figure}
 \includegraphics[width=9cm]{ensemble_stdev.pdf}
@@ -356,7 +306,7 @@ Punainen: $\Delta x=70$, sininen: $\Delta x=42$, vihreä: $\Delta x=14$
 
 \end{frame}
 
-\begin{frame}{Peräkkäisten analyysien varianssi}
+\begin{frame}{Variance between consecutive analyses}
 
 \begin{figure}
 \includegraphics[width=9cm]{stdev_between_analysis.pdf}
@@ -364,7 +314,7 @@ Punainen: $\Delta x=70$, sininen: $\Delta x=42$, vihreä: $\Delta x=14$
 
 \end{frame}
 
-\begin{frame}{Kysymyksiä?}
+\begin{frame}{Any questions?}
 
 
 \end{frame}
